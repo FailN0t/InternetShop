@@ -23,5 +23,13 @@ public class Product {
         this.price = price;
     }
 
+    public String toString(){
+        return name + " - " + price;
+    }
+
+    public void print(){
+        String info = name + " - " +price;
+        System.out.println(info);
+    }
 
 }
