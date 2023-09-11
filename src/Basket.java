@@ -3,21 +3,31 @@
 public class Basket {
     private String items = "";
     private int totalPrice = 0;
-
     private int limit;
 
-    public Basket(int limit){
-        this();
-        this.limit = limit;
+    private static int count = 0;
+
+    public static int getCount(){
+        return count;
     }
 
+    public static void increaseCount(int count){
+        Basket.count = Basket.count + count;
+    }
+
+    public Basket(int limit){
+        increaseCount(1);
+        this.limit = limit;
+    }
     public Basket(String items, int totalPrice){
-        this();
+        increaseCount(1);
         this.items += items;
         this.totalPrice = totalPrice;
     }
 
+
     public Basket(){
+        increaseCount(1);
         items = "Список товаров";
         limit = 20000;
     }
